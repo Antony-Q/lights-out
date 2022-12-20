@@ -1,2 +1,21 @@
-const canvas = document.querySelector("canvas");
-console.log(canvas)
+const canvas = document.querySelector("canvas")
+const c = canvas.getContext("2d")
+
+canvas.width = innerWidth
+canvas.height = innerHeight
+
+class Boundary {
+    draw() {
+        c.fillStyle = "yellow"
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
+    }
+}
+
+const boundary = new Boundary({
+    position: {
+        x: 0,
+        y: 0
+    }
+})
+
+boundary.draw()
